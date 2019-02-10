@@ -1,0 +1,156 @@
+CREATE TABLE employee
+ADD employee_id char 10
+ADD last_name char 200
+ADD first_name char 200
+ADD middle_name char 200
+ADD street_address char 1000
+ADD state char 30
+ADD zip char 10
+ADD ft/pt char 50
+ADD salary char 20
+ADD home_phone char 50
+ADD roles char 50
+ADD certifications char 10
+END
+INSERT INTO employee 1,APPLE,ADAMS,n/a,10 DOWNSTREET,PA,10002,FT,100000,878-345-3466,2,3
+INSERT INTO employee 2,BOB,BILLY,n/a,30 HUNTING LANE,CA,36466,FT,80000,570-987-7876,4,2
+INSERT INTO employee 3,CHUMS,CHRISTINA,n/a,787 GODORN STREET,AZ,78678,FT,90000,768-675-4432,3,4
+INSERT INTO employee 4,DORMAN,DOROTHY,n/a,878 ILLIANA STREET,KA,46579,FT,110000,765-453-0098,4,2
+INSERT INTO employee 5,ENRIQUE,EAGLES,JAMES,13 PARKWAY PLAZA,GA,78776,FT,130000,345-445-3566,3,4
+INSERT INTO employee 6,HIGGINS,HENRY,n/a,45 MANHATTAN STREET,FL,75547,FT,150000,444-676-9922,6,n/a
+INSERT INTO employee 7,FREEMAN,FERDINAND,n/a,309D BLUECOURSE DRIVE,NY,22938,FT,160000,989-776-3455,6,n/a
+INSERT INTO employee 8,JOHN,RAYMOND,n/a,232B VERTICAN LANE,PA,10023,FT,100000,767-345-3657,2,3
+INSERT INTO employee 9,DAVIS,STOCKS,n/a,565C PARKCREST DRIVE,CA,36574,FT,180000,570-878-1123,3,4
+INSERT INTO employee 10,NANCY,POWEL,n/a,45 HYPER LANE,VA,99123,FT,85000,345-743-3354,2,3
+CREATE TABLE department
+ADD dept_id char 10
+ADD dept_name char 50
+ADD no_of_beds char 10
+ADD dept_need_id char 10
+ADD dept_shift_id char 10
+END
+INSERT INTO department 1,ORTHOPEDIC,100,2,1
+INSERT INTO department 4,SURGERY,300,4,1
+INSERT INTO department 5,MEDICINE,300,4,2
+INSERT INTO department 3,GYNECOLOGY,100,4,3
+INSERT INTO department 2,PEADIATRIC,200,3,2
+CREATE TABLE schedule
+ADD schedule_id char 10
+ADD schedule_shift_id char 10
+ADD schedule_dept_id char 10
+ADD schedule_need_id char 10
+ADD date_of_shift char 30
+ADD schedule_week_no char 10
+ADD schedule_employee_id char 10
+END
+INSERT INTO schedule 1,1,1,1,10/09/2017,2,2
+INSERT INTO schedule 2,2,1,1,10/10/2017,2,1
+INSERT INTO schedule 3,2,1,2,10/11/2017,2,3
+INSERT INTO schedule 4,1,1,3,10/12/2017,2,9
+INSERT INTO schedule 5,2,1,4,10/13/2017,2,10
+INSERT INTO schedule 6,3,1,2,10/14/2017,2,5
+INSERT INTO schedule 7,3,1,4,10/15/2017,2,6
+INSERT INTO schedule 8,2,2,2,10/09/2017,2,5
+INSERT INTO schedule 9,1,2,3,10/10/2017,2,4
+INSERT INTO schedule 10,3,2,1,10/11/2017,2,1
+INSERT INTO schedule 11,2,2,4,10/12/2017,2,10
+INSERT INTO schedule 12,3,2,4,10/13/2017,2,3
+INSERT INTO schedule 13,1,2,2,10/14/2017,2,7
+INSERT INTO schedule 14,2,2,5,10/15/2017,2,8
+INSERT INTO schedule 15,1,3,5,10/09/2017,2,6
+INSERT INTO schedule 16,3,3,1,10/10/2017,2,3
+INSERT INTO schedule 17,1,3,2,10/11/2017,2,2
+INSERT INTO schedule 18,2,3,6,10/12/2017,2,8
+INSERT INTO schedule 19,3,3,7,10/13/2017,2,6
+INSERT INTO schedule 20,2,3,3,10/14/2017,2,2
+INSERT INTO schedule 21,1,3,4,10/15/2017,2,3
+INSERT INTO schedule 22,3,4,2,10/09/2017,2,1
+INSERT INTO schedule 23,2,4,3,10/10/2017,2,9
+INSERT INTO schedule 24,1,4,4,10/11/2017,2,4
+INSERT INTO schedule 25,3,4,1,10/12/2017,2,5
+INSERT INTO schedule 26,1,4,6,10/13/2017,2,8
+INSERT INTO schedule 27,2,4,2,10/14/2017,2,9
+INSERT INTO schedule 28,3,4,4,10/15/2017,2,10
+INSERT INTO schedule 29,2,5,1,10/09/2017,2,3
+INSERT INTO schedule 30,2,5,2,10/10/2017,2,10
+INSERT INTO schedule 31,3,5,2,10/11/2017,2,8
+INSERT INTO schedule 32,1,5,3,10/12/2017,2,7
+INSERT INTO schedule 33,1,5,4,10/13/2017,2,2
+INSERT INTO schedule 34,2,5,7,10/14/2017,2,1
+INSERT INTO schedule 35,2,5,6,10/15/2017,2,9
+CREATE TABLE shift
+ADD shift_id char 10
+ADD shift_timing char 1000
+ADD shift_overtime char 500
+END
+INSERT INTO shift 1,7:30 AM - 3:30 PM,2HRS
+INSERT INTO shift 1,3:30 PM - 11:30 PM,2HRS
+INSERT INTO shift 1,11:30 PM - 7:30 AM,1HR
+CREATE TABLE needs
+ADD need_id char 10
+ADD need_week_no char 10
+ADD need_role_id char 10
+ADD number_needed char 10
+ADD need_certification char 10
+END
+INSERT INTO needs 1,1,1,8,2
+INSERT INTO needs 2,2,1,10,3
+INSERT INTO needs 3,3,2,12,3
+INSERT INTO needs 4,5,4,5,3
+INSERT INTO needs 5,5,2,20,4
+INSERT INTO needs 6,2,3,18,3
+INSERT INTO needs 7,3,1,34,2
+CREATE TABLE roles
+ADD role_id char 10
+ADD role_name char 200
+END
+INSERT INTO roles 6,MANAGER
+INSERT INTO roles 1,ASSISTANT NURSE
+INSERT INTO roles 2,SENIOR NURSE
+INSERT INTO roles 3,HEAD NURSE
+INSERT INTO roles 5,DEPT HEAD NURSE
+INSERT INTO roles 4,UNIT HEAD NURSE
+CREATE TABLE certifications
+ADD certification_id char 10
+ADD certification_name char 500
+END
+INSERT INTO certifications 1,CERTIFIED PHYSIOTHERAPIST
+INSERT INTO certifications 2,CERTIFIED HEAD NURSE
+INSERT INTO certifications 3,CERTIFIED HYGIENE EXPERT
+INSERT INTO certifications 4,CERTIFIED ORTHOPEDIC ASSISTANT
+SELECT first_name, middle_name, last_name, date_of_shift, shift_timing, dept_name, role_name
+FROM  schedule, employee, shift, department, roles
+WHERE schedule_employee_id  = employee_id
+AND  schedule_shift_id = shift_id
+AND  schedule_dept_id = dept_id
+AND roles = role_id
+AND  schedule_week_no = "2"
+END
+SELECT dept_name, date_of_shift, shift_timing, role_name, number_needed
+FROM department, schedule, shift, needs, roles
+WHERE schedule_dept_id = dept_id
+AND schedule_shift_id = shift_id
+AND schedule_need_id = need_id
+AND need_role_id = role_id
+AND schedule_week_no = "2"
+END
+SELECT dept_name, date_of_shift, shift_timing, first_name, middle_name, last_name, home_phone
+FROM department, schedule, employee, shift
+WHERE schedule_dept_id = dept_id
+AND schedule_shift_id = shift_id
+AND schedule_employee_id = employee_id
+AND schedule_week_no = "2"
+END
+SELECT dept_name, date_of_shift, shift_timing, salary
+FROM department, schedule, employee, shift
+WHERE schedule_dept_id = dept_id
+AND schedule_shift_id = shift_id
+AND schedule_employee_id = employee_id
+AND schedule_week_no = "2"
+END
+CREATE INDEX ischedule USING schedule_employee_id, schedule_shift_id, schedule_dept_id, schedule_week_no, schedule_need_id
+FROM schedule
+END
+SELECT schedule_employee_id, schedule_shift_id, schedule_dept_id, schedule_week_no, schedule_need_id
+FROM ischedule
+END
